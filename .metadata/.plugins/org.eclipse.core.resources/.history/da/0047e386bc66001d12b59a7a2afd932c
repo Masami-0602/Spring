@@ -1,0 +1,13 @@
+package com.tunayo.springboot;
+
+import org.springframework.stereotype.*;
+import org.springframework.web.bind.annotation.*;
+
+@Controller
+public class HelloController {
+	
+	@GetMapping("/hello")
+	public String getHello() {
+		return "hello";
+	}
+}

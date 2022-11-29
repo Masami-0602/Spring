@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelead.org">
+<head>
+	<meta charset="UTF-8"></meta>
+	<title>Hello world</title>
+</head>
+<body>
+<h1>Hello World</h1>
+</body>
+</html>

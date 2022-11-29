@@ -1,0 +1,29 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.stereotype.*;
+
+@Controller
+public class HeloController {
+	
+	@RequestMapping("/{id}")
+	public ModelAndView index(@PathVariable int id, ModelAndView mav) {
+		mav.setViewName("index");
+		mav.addObject("id", id);
+		mav.addObject("check", id % 2 == 0);
+		mav.addObject("trueVal", "Even number!");
+		mav.addObject("falseVal", "Odd number...");
+		return mav;
+	}
+	@RequestMapping("/other")
+	public String other() {
+		 return "redirect:/";
+	}
+	
+	@RequestMapping("/home")
+	public String home() {
+		return "forward:/";
+	}
+
+}
