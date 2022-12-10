@@ -15,8 +15,8 @@ public class HelloRepository {
 	public Map<String, Object>findById(String id){
 		
 		String query = "SELECT *"
-				+ "FROM employee"
-				+ "WHERE id=?";
+				+ " FROM employee"
+				+ " WHERE id=?";
 		
 		Map<String, Object>employee = jdbcTemplate.queryForMap(query, id);
 		
