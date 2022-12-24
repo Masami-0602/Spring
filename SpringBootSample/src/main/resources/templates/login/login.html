@@ -5,33 +5,31 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			
 			<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-			<link rel="stylesheet" th:href="@{css/login/login.css}">
+			<link rel="stylesheet" th:href="@{/css/login/login.css}">
 			
-			<!--
 			<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" defer></script>
 			<script th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}" defer></script>
-			<-->
 			
-			<title>ÉçÉOÉCÉì</title>
+			<title>„É≠„Ç∞„Ç§„É≥</title>
 		</head>
 		<body class="bg-light">
-			<div class"text-center">
+			<div class="text-center">
 				<form method="post" th:action="@{/login}" class="form-login">
-					<h2>ÉçÉOÉCÉì</h2>
+					<h2>„É≠„Ç∞„Ç§„É≥</h2>
 					
 					<div class="form-group">
 						<label for="userId" class="sr-only">userId</label>
-						<input type="text" class="form-control" placeholder="ÉÜÅ[ÉUÅ[ID" name="userId"/>
+						<input type="text" class="form-control" placeholder="userId" name="userId"/>
 					</div>
 					
 					<div class="form-group">
 						<label for="password" class="sr-only">password</label>
-						<input type="text" class="form-control" placeholder="ÉpÉXÉèÅ[Éh" name="password"/>
+						<input type="text" class="form-control" placeholder="password" name="password"/>
 					</div>
 					
-					<input type="submit" value="ÉçÉOÉCÉì" class="btn btn-primary"/>
+					<input type="submit" value="„É≠„Ç∞„Ç§„É≥" class="btn btn-primary"/>
 				</form>
-				<a th:href="@{/user/signup}">êVãKìoò^ÇÕÇ±ÇøÇÁ</a>
+				<a th:href="@{user/signup}">Êñ∞Ë¶èÁôªÈå≤„ÅØ„Åì„Å°„Çâ</a>
 			</div>
 		</body>
 	</html>
