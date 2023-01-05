@@ -13,10 +13,14 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import com.tunayo.springboot.service.UserApplicationService;
+import com.tunayo.springboot.domain.user.service.UserService;
+import com.tunayo.springboot.domain.user.model.MUser;
+
 import com.tunayo.springboot.form.SignupForm;
 import com.tunayo.springboot.form.GroupOrder;
 
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 
 @Controller
 @RequestMapping("/user")
@@ -25,6 +29,12 @@ public class SignUpController {
 	
 	@Autowired
 	private UserApplicationService userApplicationService;
+	
+	@Autowired
+	private UserService userService;
+	
+	@Autowired
+	private ModelMapper modelMapper;
 	
 	@GetMapping("/signup")
 	public String getSignup(Model model, Locale locale, @ModelAttribute SignupForm form) {
@@ -40,9 +50,12 @@ public class SignUpController {
 			return getSignup(model, locale, form);
 		}
 		
-		
 		log.info(form.toString());
-	
+		
+		MUser user = modelMapper.map(form, MUser.class);
+
+		userService.signup(user);
+		
 		return "redirect:/login";
 	}
 }
